@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/variables';
+@import "primeicons/primeicons.css";
+
+html, body {
+  font-family: var(--font-family-base), sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 5px;
+}
+
+// Classes utilitaires réutilisables
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &-primary {
+    background: var(--gradient-primary);
+    color: white;
+
+    &:hover {
+      background: var(--gradient-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+
+app-root {
+  height: 100%;
+  display: block;
+}

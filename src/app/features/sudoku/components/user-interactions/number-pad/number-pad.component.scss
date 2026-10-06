@@ -1,0 +1,49 @@
+.new-game {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.number-pad {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.number-card {
+  width: calc(33.333% - 10px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  //width: 100px;
+  height: 100px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.new-game {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+
+.full-width {
+  width: 100%;
+  display: block;
+  justify-content: center;
+}
+
+::ng-deep .wide-button .p-button {
+  width: 90%;
+}

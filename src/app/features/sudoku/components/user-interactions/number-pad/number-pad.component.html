@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="number-pad">
+    @for (number of numbers; track number) {
+      <div class="number-card" (click)="selectNumber(number)">
+        {{ number }}
+      </div>
+    }
+  </div>
+
+  <div class="new-game">
+    <p-button label="New Game" [rounded]="false" severity="info" [style]="{ width: '100%' }" />
+  </div>
+</div>

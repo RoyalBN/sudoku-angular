@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="first-row">
+    <div class="difficulty">
+      <div class="difficulty-title">
+        <p>Difficulty : </p>
+      </div>
+
+      <div class="difficulty-selected">
+        @for (difficulty of difficulties; track difficulty) {
+          <p-button
+            label="{{difficulty}}"
+            [raised]="selectedDifficulty() === difficulty"
+            variant="outlined"
+            severity="info"
+            (click)="selectDifficulty(difficulty)"
+          />
+        }
+      </div>
+    </div>
+
+    <div class="score">
+      <p>Score : {{ score() }}</p>
+    </div>
+  </div>
+
+  <div class="second-row">
+    <div class="left-column">
+      <app-grid />
+    </div>
+    <div class="right-column">
+      <app-user-interactions [mistakes]="mistakes()" />
+    </div>
+  </div>
+
+</div>
