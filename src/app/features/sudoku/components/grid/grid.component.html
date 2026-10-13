@@ -1,0 +1,7 @@
+<div class="grid">
+  @for (cellValue of board(); track $index) {
+    <div class="cell" (click)="onCellClick($index, cellValue)">
+      {{ cellValue !== null ? cellValue : '' }}
+    </div>
+  }
+</div>

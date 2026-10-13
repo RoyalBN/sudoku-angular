@@ -146,12 +146,14 @@
   },
   "schematics": {
     "@schematics/angular:component": {
-      "style": "scss"
+      "standalone": true,
+      "style": "scss",
+      "skipImport": true,
+      "skipTests": false
     }
   },
   "cli": {
     "schematicCollections": [
-      "@cypress/schematic",
       "angular-eslint",
       "@schematics/angular"
     ]
