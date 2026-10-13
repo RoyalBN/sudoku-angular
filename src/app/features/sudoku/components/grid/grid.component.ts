@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, inject, input, signal} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {SudokuGenerationService} from '../../services/sudoku-generation-service';
+import {Difficulty} from '../../models/difficulty.model';
+import {SudokuGameService} from '../../services/sudoku-game-service';
 
 @Component({
   selector: 'app-grid',
@@ -8,6 +11,16 @@ import {CommonModule} from '@angular/common';
   styleUrl: './grid.component.scss'
 })
 export class Grid {
-  board = Array.from({ length: 9 }, () => Array(9).fill(0));
+
+  private sudokuGameService = inject(SudokuGameService);
+
+  public gameDifficulty = input.required<Difficulty>();
+  public board = input.required<(number | null)[]>();
+
+  onCellClick(index: number, value: number | null): void {
+    this.sudokuGameService.selectCell(index);
+    console.log(`Case cliquée - Index: ${index}, Valeur actuelle: ${value}`);
+  }
+
 
 }

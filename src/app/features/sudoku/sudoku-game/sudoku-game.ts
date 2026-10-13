@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import { Grid } from '../components/grid/grid.component';
 import { InfoBar } from '../components/user-interactions/info-bar/info-bar.component';
 import { UserInteractions } from '../components/user-interactions/user-interactions.component';
 import { Difficulty } from '../models/difficulty.model';
 import { Button } from 'primeng/button';
 import { CommonModule } from '@angular/common';
+import {SudokuGameService} from '../services/sudoku-game-service';
 
 @Component({
   selector: 'app-sudoku-game',
@@ -12,14 +13,16 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sudoku-game.html',
   styleUrl: './sudoku-game.scss',
 })
-export class SudokuGame2 {
+export class SudokuGame {
+  private gameService = inject(SudokuGameService);
+
   difficulties = Object.values(Difficulty);
-  selectedDifficulty = signal<Difficulty>(Difficulty.EASY);
-  score = signal(0);
-  newGame = signal(false);
-  mistakes = signal(0);
+  selectedDifficulty = this.gameService.selectedDifficulty;
+  score = this.gameService.score;
+  mistakes = this.gameService.mistakes;
+  board = this.gameService.board;
 
   selectDifficulty(difficulty: Difficulty) {
-    this.selectedDifficulty.set(difficulty);
+    this.gameService.changeDifficulty(difficulty);
   }
 }

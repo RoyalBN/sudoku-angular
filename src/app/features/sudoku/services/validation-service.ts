@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ValidationService {
 
-  private readonly easySolution: number[] = [
+  private readonly sudokuSolution: number[] = [
     1, 2, 3, 4, 5, 6, 7, 8, 9,
     4, 5, 6, 7, 8, 9, 1, 2, 3,
     7, 8, 9, 1, 2, 3, 4, 5, 6,
@@ -15,13 +15,12 @@ export class ValidationService {
     3, 1, 2, 6, 4, 5, 9, 7, 8,
     6, 4, 5, 9, 7, 8, 3, 1, 2,
     9, 7, 8, 3, 1, 2, 6, 4, 5
-  ]
+  ];
 
-  isMoveValid(idx: number, value: number, currentBoard: number[]): boolean {
+  isMoveValid(idx: number, value: number): boolean {
     // 1. Vérifier la valeur attendue dans la solution
-    return this.easySolution[idx] === value;
+    return this.sudokuSolution[idx] === value;
 
   }
-
 
 }

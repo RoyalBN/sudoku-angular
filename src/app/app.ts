@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SudokuGame2 } from './features/sudoku/sudoku-game/sudoku-game';
+import { SudokuGame } from './features/sudoku/sudoku-game/sudoku-game';
 
 @Component({
   selector: 'app-root',

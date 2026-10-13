@@ -26,7 +26,10 @@
 
   <div class="second-row">
     <div class="left-column">
-      <app-grid />
+      <app-grid
+        [gameDifficulty]="selectedDifficulty()"
+        [board]="board()"
+      />
     </div>
     <div class="right-column">
       <app-user-interactions [mistakes]="mistakes()" />

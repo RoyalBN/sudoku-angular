@@ -1,10 +1,7 @@
 <div class="grid">
-  @for (row of board; track rowIndex; let rowIndex = $index) {
-      @for (cell of row; track colIndex; let colIndex = $index) {
-        <div class="cell">
-          <!-- contenu de la cellule -->
-          {{ 0 }}
-        </div>
-      }
+  @for (cellValue of board(); track $index) {
+    <div class="cell" (click)="onCellClick($index, cellValue)">
+      {{ cellValue !== null ? cellValue : '' }}
+    </div>
   }
 </div>
